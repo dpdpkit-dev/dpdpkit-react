@@ -1,10 +1,12 @@
 {
   "name": "@dpdpkit/react",
-  "version": "0.1.0-dev.0",
+  "version": "0.1.0-alpha.1",
   "description": "React components and hooks for dpdpkit: DPDP consent notice, preference centre, rights request form.",
   "license": "Apache-2.0",
   "type": "module",
-  "sideEffects": ["**/*.css"],
+  "sideEffects": [
+    "**/*.css"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -16,9 +18,23 @@
     },
     "./styles.css": "./dist/styles.css"
   },
-  "files": ["dist", "README.md", "LICENSE"],
-  "repository": { "type": "git", "url": "git+https://github.com/dpdpkit-dev/dpdpkit-react.git" },
-  "keywords": ["dpdp", "consent", "privacy", "react", "india", "cookie-consent"],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpdpkit-dev/dpdpkit-react.git"
+  },
+  "keywords": [
+    "dpdp",
+    "consent",
+    "privacy",
+    "react",
+    "india",
+    "cookie-consent"
+  ],
   "scripts": {
     "typecheck": "tsc --noEmit",
     "build": "vite build && tsc -p tsconfig.build.json && node -e \"require('fs').copyFileSync('src/styles.css','dist/styles.css')\"",
@@ -45,5 +61,8 @@
     "vite": "^6.0.0",
     "vitest": "^3.0.0"
   },
-  "publishConfig": { "access": "public", "provenance": true }
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
 }
