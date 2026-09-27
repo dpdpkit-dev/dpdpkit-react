@@ -18,10 +18,10 @@ jobs:
         node: [20, 22, 24]
     steps:
       # Until @dpdpkit/client is on npm, it is consumed from a sibling checkout (file:../dpdpkit-client).
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           path: dpdpkit-react
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           repository: dpdpkit-dev/dpdpkit-client
           path: dpdpkit-client
