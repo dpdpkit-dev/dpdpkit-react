@@ -17,31 +17,15 @@ jobs:
       matrix:
         node: [20, 22, 24]
     steps:
-      # Until @dpdpkit/client is on npm, it is consumed from a sibling checkout (file:../dpdpkit-client).
-      - uses: actions/checkout@v4
-        with:
-          path: dpdpkit-react
-      - uses: actions/checkout@v4
-        with:
-          repository: dpdpkit-dev/dpdpkit-client
-          path: dpdpkit-client
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node }}
-      - name: Build @dpdpkit/client
-        working-directory: dpdpkit-client
-        run: npm ci && npm run build
-      - working-directory: dpdpkit-react
-        run: npm ci
-      - working-directory: dpdpkit-react
-        run: npm run typecheck
+      - run: npm ci
+      - run: npm run typecheck
       - name: Tests (Testing Library + axe-core)
-        working-directory: dpdpkit-react
         run: npm test
-      - working-directory: dpdpkit-react
-        run: npm run build
+      - run: npm run build
       - name: Bundle-size budget
-        working-directory: dpdpkit-react
         run: npm run size
-      - working-directory: dpdpkit-react
-        run: npm audit --audit-level=high --omit=dev
+      - run: npm audit --audit-level=high --omit=dev

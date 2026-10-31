@@ -48,9 +48,9 @@
     "react-dom": ">=18"
   },
   "devDependencies": {
-    "@dpdpkit/client": "file:../dpdpkit-client",
-    "@testing-library/react": "^16.0.0",
+    "@dpdpkit/client": "^0.1.0-alpha.1",
     "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.0",
     "@types/react": "^18.3.0",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.0",

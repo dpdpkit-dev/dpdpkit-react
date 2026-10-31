@@ -4,6 +4,10 @@ All code packages in the dpdpkit release train share one version number.
 
 ## Unreleased
 
+### Changed
+- Development and CI use the published `@dpdpkit/client` instead of a sibling checkout, so Dependabot can
+  update npm dependencies again.
+
 ### Added
 - Bundle-size budget in CI (`npm run size`): 6 kB gzip for the JS entry points, 2 kB for `styles.css`.
 
