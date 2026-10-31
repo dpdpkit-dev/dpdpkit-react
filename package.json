@@ -40,7 +40,8 @@
     "build": "vite build && tsc -p tsconfig.build.json && node -e \"require('fs').copyFileSync('src/styles.css','dist/styles.css')\"",
     "test": "vitest run",
     "size": "node scripts/size.mjs",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "e2e": "playwright test"
   },
   "peerDependencies": {
     "@dpdpkit/client": ">=0.1.0-0 <0.2.0",
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "@dpdpkit/client": "^0.1.0-alpha.1",
+    "@playwright/test": "^1.64.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.0",
     "@types/react": "^18.3.0",

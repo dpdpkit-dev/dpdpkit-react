@@ -48,6 +48,18 @@ const { requests, open } = useRequests();
 Override CSS variables on `.dpdp` or any parent: `--dpdp-accent`, `--dpdp-text`, `--dpdp-bg`,
 `--dpdp-border`, `--dpdp-radius`, `--dpdp-font`. Dark mode follows `prefers-color-scheme`.
 
+## Tests
+
+```bash
+npm test          # unit tests with Testing Library and axe-core (jsdom)
+npm run e2e       # Playwright: the components in Chromium against examples/fastapi_shop
+```
+
+`npm run e2e` starts fastapi-shop from a `dpdpkit-fastapi` checkout next to this one
+(`DPDPKIT_FASTAPI_DIR`) using `DPDPKIT_PYTHON`, plus a Vite harness page (`e2e/harness`), then checks
+consent, withdrawal, rights requests and accessibility end to end. Run `npx playwright install chromium`
+once first.
+
 ## Licence
 
 Apache-2.0.

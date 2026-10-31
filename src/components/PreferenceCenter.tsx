@@ -107,7 +107,7 @@ export function PreferenceCenter({ className }: { className?: string }) {
           <p role="status">{labels.loading}</p>
         )}
       </details>
-      <NoticeLinks notice={notice} />
+      <NoticeLinks notice={notice} section={labels.preferencesTitle} />
     </section>
   );
 }

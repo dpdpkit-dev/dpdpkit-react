@@ -3,7 +3,9 @@ import { useEffect, useId, useState } from "react";
 import { useDpdp } from "../context";
 import { useConsent, useNotice } from "../hooks";
 
-export function NoticeLinks({ notice }: { notice: Notice }) {
+/** The notice's required links. ``section`` names the surrounding component, so two link lists on one
+ * page are distinct landmarks for screen-reader users ("Your rights: Your consent choices"). */
+export function NoticeLinks({ notice, section }: { notice: Notice; section?: string }) {
   const { labels } = useDpdp();
   const links: Array<[string, string]> = [
     ["withdraw", labels.withdrawLink],
@@ -11,7 +13,7 @@ export function NoticeLinks({ notice }: { notice: Notice }) {
     ["board_complaint", labels.boardLink],
   ];
   return (
-    <nav className="dpdp-links" aria-label={labels.rightsLink}>
+    <nav className="dpdp-links" aria-label={section ? `${labels.rightsLink}: ${section}` : labels.rightsLink}>
       <ul>
         {links.map(([key, text]) =>
           notice.links[key] ? (
@@ -139,7 +141,7 @@ export function ConsentNotice({ onSaved, className }: ConsentNoticeProps) {
           {status === "saved" ? labels.saved : status === "error" ? labels.error : ""}
         </p>
       </form>
-      <NoticeLinks notice={notice} />
+      <NoticeLinks notice={notice} section={notice.title} />
     </section>
   );
 }
