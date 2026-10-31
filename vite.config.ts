@@ -15,5 +15,6 @@ export default defineConfig({
     sourcemap: true,
     target: "es2020",
   },
-  test: { environment: "jsdom", globals: false },
+  // Unit tests only; e2e/ is run by Playwright (npm run e2e).
+  test: { environment: "jsdom", globals: false, include: ["test/**/*.test.{ts,tsx}"] },
 });
