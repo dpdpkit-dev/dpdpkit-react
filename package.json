@@ -39,6 +39,7 @@
     "typecheck": "tsc --noEmit",
     "build": "vite build && tsc -p tsconfig.build.json && node -e \"require('fs').copyFileSync('src/styles.css','dist/styles.css')\"",
     "test": "vitest run",
+    "size": "node scripts/size.mjs",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {

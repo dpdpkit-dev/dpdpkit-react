@@ -40,5 +40,8 @@ jobs:
         run: npm test
       - working-directory: dpdpkit-react
         run: npm run build
+      - name: Bundle-size budget
+        working-directory: dpdpkit-react
+        run: npm run size
       - working-directory: dpdpkit-react
         run: npm audit --audit-level=high --omit=dev
