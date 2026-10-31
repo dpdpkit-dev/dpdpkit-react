@@ -1,0 +1,46 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction" />
+
+# @dpdpkit/react
+
+React components and hooks for [dpdpkit](https://dpdpkit-dev.github.io/dpdpkit-docs/): an itemised consent notice,
+a preference centre with one-click withdrawal, a rights request form and a language switcher.
+
+> **Disclaimer.** dpdpkit is software that helps you implement obligations under India's Digital Personal
+> Data Protection Act, 2023 and the DPDP Rules, 2025. It does not provide legal advice and does not
+> guarantee compliance.
+
+```bash
+npm i @dpdpkit/react @dpdpkit/client
+```
+
+```tsx
+import { ConsentNotice, DpdpProvider, LanguageSwitcher, PreferenceCenter, RightsRequestForm } from "@dpdpkit/react";
+import "@dpdpkit/react/styles.css";
+
+<DpdpProvider options={{ baseUrl: "/dpdp" }} locale="hi">
+  <LanguageSwitcher />
+  <ConsentNotice onSaved={() => closeBanner()} />
+  <PreferenceCenter />
+  <RightsRequestForm />
+</DpdpProvider>
+```
+
+## About these stories
+
+The stories run against an in-memory backend in your browser: nothing you click is sent anywhere, and a
+reload starts again. In your app the same components talk to a dpdpkit backend (the FastAPI or Django
+adapter, `dpdpkit-server` or dpdpkit Cloud) through `@dpdpkit/client`. The notice, its purposes and its
+translations are example content, not a template to copy.
+
+The **Accessibility** panel runs axe-core on each story. The same checks run in CI.
+
+## Design rules the components follow
+
+- **Legal text comes from the API.** Titles, purposes, data items and links come from the notice in the
+  principal's language. Only interface labels (button text) live in the package; override them with `labels`.
+- **Nothing pre-ticked.** A box is ticked only if the principal previously gave that consent.
+- **Equal choices.** "Accept all", "Reject all" and "Save my choices" share one style.
+- **Withdrawal is one click**, never more steps than granting.
+- **Always linked:** withdraw, your rights, and complaining to the Data Protection Board.

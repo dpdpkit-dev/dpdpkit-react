@@ -23,9 +23,11 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm ci
       - run: npm run typecheck
-      - name: Tests (Testing Library + axe-core)
+      - name: Tests (Testing Library + axe-core, every story included)
         run: npm test
       - run: npm run build
+      - name: Storybook builds (published on the docs site by dpdpkit-docs)
+        run: npm run build-storybook
       - name: Bundle-size budget
         run: npm run size
       - run: npm audit --audit-level=high --omit=dev

@@ -48,10 +48,21 @@ const { requests, open } = useRequests();
 Override CSS variables on `.dpdp` or any parent: `--dpdp-accent`, `--dpdp-text`, `--dpdp-bg`,
 `--dpdp-border`, `--dpdp-radius`, `--dpdp-font`. Dark mode follows `prefers-color-scheme`.
 
+## Storybook
+
+Every component and state (first visit, returning visitor, Hindi, loading and error states, theming,
+custom labels) has a story. The stories run against an in-memory backend (`stories/mockClient.ts`), so no
+server is needed. The Storybook is published on the docs site under *Reference → React components*.
+
+```bash
+npm run storybook         # dev server on http://localhost:6006
+npm run build-storybook   # static build in storybook-static/, staged by dpdpkit-docs
+```
+
 ## Tests
 
 ```bash
-npm test          # unit tests with Testing Library and axe-core (jsdom)
+npm test          # unit tests with Testing Library and axe-core (jsdom), plus every story rendered and checked with axe
 npm run e2e       # Playwright: the components in Chromium against examples/fastapi_shop
 ```
 

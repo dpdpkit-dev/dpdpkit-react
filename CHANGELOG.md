@@ -15,6 +15,9 @@ All code packages in the dpdpkit release train share one version number.
   update npm dependencies again.
 
 ### Added
+- Storybook (`npm run storybook`, `npm run build-storybook`) with a story for every component and state,
+  run against an in-memory backend and published on the docs site. Every story is also rendered and
+  checked with axe-core in `npm test`.
 - Playwright widget tests against `examples/fastapi_shop` (`npm run e2e`, CI job `e2e`).
 - Bundle-size budget in CI (`npm run size`): 6 kB gzip for the JS entry points, 2 kB for `styles.css`.
 
