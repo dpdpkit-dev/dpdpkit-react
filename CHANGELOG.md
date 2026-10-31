@@ -5,6 +5,8 @@ All code packages in the dpdpkit release train share one version number.
 ## Unreleased
 
 ### Changed
+- Built with TypeScript 7, vite 8, vitest 5 and @vitejs/plugin-react 6; type declarations unchanged.
+  CI tests on Node 22 and 24.
 - Development and CI use the published `@dpdpkit/client` instead of a sibling checkout, so Dependabot can
   update npm dependencies again.
 
