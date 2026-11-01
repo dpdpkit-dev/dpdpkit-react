@@ -15,6 +15,9 @@ All code packages in the dpdpkit release train share one version number.
   update npm dependencies again.
 
 ### Added
+- `AgeGate` (date of birth checked in the browser, only the verdict is reported) and `GuardianFlow`
+  (start, redirect and complete verifiable guardian consent). `GuardianFlow` takes the two guardian
+  endpoints as an `api` prop, because `@dpdpkit/client` has no guardian methods yet.
 - Storybook (`npm run storybook`, `npm run build-storybook`) with a story for every component and state,
   run against an in-memory backend and published on the docs site. Every story is also rendered and
   checked with axe-core in `npm test`.

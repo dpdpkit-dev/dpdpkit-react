@@ -37,6 +37,21 @@ export interface Labels {
   dueBy: string;
   yourRequests: string;
   kinds: Record<"access" | "correction" | "completion" | "updating" | "erasure" | "nomination" | "grievance", string>;
+  ageGateTitle: string;
+  birthDate: string;
+  ageGateHint: string;
+  continue: string;
+  guardianTitle: string;
+  guardianIntro: string;
+  guardianMethod: string;
+  guardianMethods: Record<"existing_kyc" | "digilocker_token" | "partner_token" | "court_order", string>;
+  startVerification: string;
+  continueWithVerifier: string;
+  verifierToken: string;
+  completeVerification: string;
+  guardianPending: string;
+  guardianVerified: string;
+  guardianFailed: string;
 }
 
 export const defaultLabels: Labels = {
@@ -82,4 +97,24 @@ export const defaultLabels: Labels = {
     nomination: "Nominate someone to act for me",
     grievance: "Raise a grievance",
   },
+  ageGateTitle: "Before you continue",
+  birthDate: "Date of birth",
+  ageGateHint: "We use this only to check your age. It is not stored or sent anywhere.",
+  continue: "Continue",
+  guardianTitle: "Verify a parent or guardian",
+  guardianIntro: "A parent or lawful guardian must give consent before we process a child's data.",
+  guardianMethod: "How will the guardian be verified?",
+  guardianMethods: {
+    existing_kyc: "Identity we already hold",
+    digilocker_token: "DigiLocker",
+    partner_token: "Verification partner",
+    court_order: "Court order",
+  },
+  startVerification: "Start verification",
+  continueWithVerifier: "Continue to the verifier",
+  verifierToken: "Code or token from the verifier",
+  completeVerification: "Complete verification",
+  guardianPending: "Waiting for the guardian to complete verification.",
+  guardianVerified: "Guardian verified.",
+  guardianFailed: "Verification failed. You can start again.",
 };
