@@ -4,6 +4,8 @@ All code packages in the dpdpkit release train share one version number.
 
 ## Unreleased
 
+## 0.1.0-alpha.2 - 2026-11-02
+
 ### Fixed
 - `ConsentNotice` and `PreferenceCenter` on one page no longer render two navigation landmarks with the same
   name (axe `landmark-unique`). `NoticeLinks` takes an optional `section` to name its landmark.
